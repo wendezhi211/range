@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>抽签程序</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        #draw-result {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="draw-result"></div>
+    <button id="draw-button">抽签</button>
+    <script>
+        async function loadJSON() {
+            const response = await fetch('x.json');
+            items = await response.json();
+            
+        // 计算总权重
+        function calculateTotalWeight(items) {
+            let totalWeight = 0;
+            for (let category in items) {
+                for (let subcategory in items[category]) {
+                    for (let item in items[category][subcategory]) {
+                        totalWeight += items[category][subcategory][item];
+                    }
+                }
+            }
+            return totalWeight;
+        }
+
+        const totalWeight = calculateTotalWeight(items);
+        console.log(totalWeight);
+        // 抽签函数
+        function drawItem() {
+            let random = Math.random() * totalWeight;
+            let sum = 0;
+
+            for (let category in items) {
+                for (let subcategory in items[category]) {
+                    for (let item in items[category][subcategory]) {
+                        sum += items[category][subcategory][item];
+                        if (random < sum) {
+                            displayResult(category, subcategory, item);
+                            return;
+                        }
+                    }
+                }
+            }
+        }
+
+        // 显示结果
+        function displayResult(category, subcategory, item) {
+            const resultElement = document.getElementById('draw-result');
+            resultElement.innerHTML = `${category}<br>${subcategory}<br>${item}`;
+        }
+
+        // 绑定按钮点击事件
+        document.getElementById('draw-button').addEventListener('click', drawItem);
+        }
+
+        loadJSON();
+
+    </script>
+</body>
+
+</html>
