@@ -32,56 +32,77 @@
 <body>
     <div id="draw-result"></div>
     <button id="draw-button">抽签</button>
+    <button id="copy-category">复制类别</button>
+    <button id="copy-subcategory">复制子类别</button>
+    <button id="copy-item">复制项目</button>
     <script>
+        let currentCategory, currentSubcategory, currentItem;
+
         async function loadJSON() {
             const response = await fetch('x.json');
             items = await response.json();
-            
-        // 计算总权重
-        function calculateTotalWeight(items) {
-            let totalWeight = 0;
-            for (let category in items) {
-                for (let subcategory in items[category]) {
-                    for (let item in items[category][subcategory]) {
-                        totalWeight += items[category][subcategory][item];
+
+            // 计算总权重
+            function calculateTotalWeight(items) {
+                let totalWeight = 0;
+                for (let category in items) {
+                    for (let subcategory in items[category]) {
+                        for (let item in items[category][subcategory]) {
+                            totalWeight += items[category][subcategory][item];
+                        }
                     }
                 }
+                return totalWeight;
             }
-            return totalWeight;
-        }
 
-        const totalWeight = calculateTotalWeight(items);
-        console.log(totalWeight);
-        // 抽签函数
-        function drawItem() {
-            let random = Math.random() * totalWeight;
-            let sum = 0;
+            const totalWeight = calculateTotalWeight(items);
+            console.log(totalWeight);
 
-            for (let category in items) {
-                for (let subcategory in items[category]) {
-                    for (let item in items[category][subcategory]) {
-                        sum += items[category][subcategory][item];
-                        if (random < sum) {
-                            displayResult(category, subcategory, item);
-                            return;
+            // 抽签函数
+            function drawItem() {
+                let random = Math.random() * totalWeight;
+                let sum = 0;
+
+                for (let category in items) {
+                    for (let subcategory in items[category]) {
+                        for (let item in items[category][subcategory]) {
+                            sum += items[category][subcategory][item];
+                            if (random < sum) {
+                                displayResult(category, subcategory, item);
+                                return;
+                            }
                         }
                     }
                 }
             }
-        }
 
-        // 显示结果
-        function displayResult(category, subcategory, item) {
-            const resultElement = document.getElementById('draw-result');
-            resultElement.innerHTML = `${category}<br>${subcategory}<br>${item}`;
-        }
+            // 显示结果
+            function displayResult(category, subcategory, item) {
+                currentCategory = category;
+                currentSubcategory = subcategory;
+                currentItem = item;
+                const resultElement = document.getElementById('draw-result');
+                resultElement.innerHTML = `${category}<br>${subcategory}<br>${item}`;
+            }
 
-        // 绑定按钮点击事件
-        document.getElementById('draw-button').addEventListener('click', drawItem);
+            // 复制到剪切板
+            function copyToClipboard(text) {
+                const tempInput = document.createElement('input');
+                tempInput.value = text;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+            }
+
+            // 绑定按钮点击事件
+            document.getElementById('draw-button').addEventListener('click', drawItem);
+            document.getElementById('copy-category').addEventListener('click', () => copyToClipboard(currentCategory));
+            document.getElementById('copy-subcategory').addEventListener('click', () => copyToClipboard(currentSubcategory));
+            document.getElementById('copy-item').addEventListener('click', () => copyToClipboard(currentItem));
         }
 
         loadJSON();
-
     </script>
 </body>
 
