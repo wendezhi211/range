@@ -1036,5 +1036,251 @@
             "7.51.2 状态驱动的动画": 5,
             "7.51.3 基于侦听器的动画": 5
         }
+    },
+    "8 VUE.js API": {
+        "8.1 全局 API 应用实例": {
+            "8.1.1 createApp()": 5,
+            "8.1.2 createSSRApp()": 5,
+            "8.1.3 app.mount()": 5,
+            "8.1.4 app.unmount()": 5,
+            "8.1.5 app.component()": 5,
+            "8.1.6 app.directive()": 5,
+            "8.1.7 app.use()": 5,
+            "8.1.8 app.mixin()": 5,
+            "8.1.9 app.provide()": 5,
+            "8.1.10 app.runWithContext()": 5,
+            "8.1.11 app.version": 5,
+            "8.1.12 app.config": 5,
+            "8.1.13 app.config.errorHandler": 5,
+            "8.1.14 app.config.warnHandler": 5,
+            "8.1.15 app.config.performance": 5,
+            "8.1.16 app.config.compilerOptions": 5,
+            "8.1.17 app.config.globalProperties": 5,
+            "8.1.18 app.config.optionMergeStrategies": 5
+        },
+        "8.2 全局 API 通用": {
+            "8.2.1 version": 5,
+            "8.2.2 nextTick()": 5,
+            "8.2.3 defineComponent()": 5,
+            "8.2.4 defineAsyncComponent()": 5,
+            "8.2.5 defineCustomElement()": 5
+        },
+        "8.3 组合式 API setup()": {
+            "8.3.1 基本使用": 5,
+            "8.3.2 访问 Props": 5,
+            "8.3.3 Setup 上下文": 5,
+            "8.3.4 与渲染函数一起使用": 5
+        },
+        "8.4 组合式 API 响应式: 核心": {
+            "8.4.1 ref()": 5,
+            "8.4.2 computed()": 5,
+            "8.4.3 reactive()": 5,
+            "8.4.4 readonly()": 5,
+            "8.4.5 watchEffect()": 5,
+            "8.4.6 watchPostEffect()": 5,
+            "8.4.7 watchSyncEffect()": 5,
+            "8.4.8 watch()": 5
+        },
+        "8.5 组合式 API 响应式: 工具": {
+            "8.5.1 isRef()": 5,
+            "8.5.2 unref()": 5,
+            "8.5.3 toRef()": 5,
+            "8.5.4 toValue()": 5,
+            "8.5.5 toRefs()": 5,
+            "8.5.6 isProxy()": 5,
+            "8.5.7 isReactive()": 5,
+            "8.5.8 isReadonly()": 5
+        },
+        "8.6 组合式 API 响应式: 进阶": {
+            "8.6.1 shallowRef()": 5,
+            "8.6.2 triggerRef()": 5,
+            "8.6.3 customRef()": 5,
+            "8.6.4 shallowReactive()": 5,
+            "8.6.5 shallowReadonly()": 5,
+            "8.6.6 toRaw()": 5,
+            "8.6.7 markRaw()": 5,
+            "8.6.8 effectScope()": 5,
+            "8.6.9 getCurrentScope()": 5,
+            "8.6.10 onScopeDispose()": 5
+        },
+        "8.7 组合式 API 生命周期钩子": {
+            "8.7.1 onMounted()": 5,
+            "8.7.2 onUpdated()": 5,
+            "8.7.3 onUnmounted()": 5,
+            "8.7.4 onBeforeMount()": 5,
+            "8.7.5 onBeforeUpdate()": 5,
+            "8.7.6 onBeforeUnmount()": 5,
+            "8.7.7 onErrorCaptured()": 5,
+            "8.7.8 onRenderTracked()": 5,
+            "8.7.9 onRenderTriggered()": 5,
+            "8.7.10 onActivated()": 5,
+            "8.7.11 onDeactivated()": 5,
+            "8.7.12 onServerPrefetch()": 5
+        },
+        "8.8 组合式 API 依赖注入": {
+            "8.8.1 provide()": 5,
+            "8.8.2 inject()": 5,
+            "8.8.3 hasInjectionContext()": 5
+        },
+        "8.9 选项式 API 状态选项": {
+            "8.9.1 data": 5,
+            "8.9.2 props": 5,
+            "8.9.3 computed": 5,
+            "8.9.4 methods": 5,
+            "8.9.5 watch": 5,
+            "8.9.6 emits": 5,
+            "8.9.7 expose": 5
+        },
+        "8.10 选项式 API 渲染选项": {
+            "8.10.1 template": 5,
+            "8.10.2 render": 5,
+            "8.10.3 compilerOptions": 5,
+            "8.10.4 slots": 5
+        },
+        "8.11 选项式 API 生命周期选项": {
+            "8.11.1 beforeCreate": 5,
+            "8.11.2 created": 5,
+            "8.11.3 beforeMount": 5,
+            "8.11.4 mounted": 5,
+            "8.11.5 beforeUpdate": 5,
+            "8.11.6 updated": 5,
+            "8.11.7 beforeUnmount": 5,
+            "8.11.8 unmounted": 5,
+            "8.11.9 errorCaptured": 5,
+            "8.11.10 renderTracked": 5,
+            "8.11.11 renderTriggered": 5,
+            "8.11.12 activated": 5,
+            "8.11.13 deactivated": 5,
+            "8.11.14 serverPrefetch": 5
+        },
+        "8.12 选项式 API 组合选项": {
+            "8.12.1 provide": 5,
+            "8.12.2 inject": 5,
+            "8.12.3 mixins": 5,
+            "8.12.4 extends": 5
+        },
+        "8.13 选项式 API 其他杂项": {
+            "8.13.1 name": 5,
+            "8.13.2 inheritAttrs": 5,
+            "8.13.3 components": 5,
+            "8.13.4 directives": 5
+        },
+        "8.14 选项式 API 组件实例": {
+            "8.14.1 $data": 5,
+            "8.14.2 $props": 5,
+            "8.14.3 $el": 5,
+            "8.14.4 $options": 5,
+            "8.14.5 $parent": 5,
+            "8.14.6 $root": 5,
+            "8.14.7 $slots": 5,
+            "8.14.8 $refs": 5,
+            "8.14.9 $attrs": 5,
+            "8.14.10 $watch()": 5,
+            "8.14.11 $emit()": 5,
+            "8.14.12 $forceUpdate()": 5,
+            "8.14.13 $nextTick()": 5
+        },
+        "8.15 内置内容 指令": {
+            "8.15.1 v-text": 5,
+            "8.15.2 v-html": 5,
+            "8.15.3 v-show": 5,
+            "8.15.4 v-if": 5,
+            "8.15.5 v-else": 5,
+            "8.15.6 v-else-if": 5,
+            "8.15.7 v-for": 5,
+            "8.15.8 v-on": 5,
+            "8.15.9 v-bind": 5,
+            "8.15.10 v-model": 5,
+            "8.15.11 v-slot": 5,
+            "8.15.12 v-pre": 5,
+            "8.15.13 v-once": 5,
+            "8.15.14 v-memo": 5,
+            "8.15.15 v-cloak": 5
+        },
+        "8.16 内置内容 组件": {
+            "8.16.1 Transition": 5,
+            "8.16.2 TransitionGroup": 5,
+            "8.16.3 KeepAlive": 5,
+            "8.16.4 Teleport": 5,
+            "8.16.5 Suspense": 5
+        },
+        "8.17 内置内容 特殊元素": {
+            "8.17.1 component": 4,
+            "8.17.2 slot": 5,
+            "8.17.3 template": 5
+        },
+        "8.18 内置内容 特殊 Attributes": {
+            "8.18.1 key": 5,
+            "8.18.2 ref": 5,
+            "8.18.3 is": 5
+        },
+        "8.19 单文件组件 语法定义": {
+            "8.19.1 总览": 5,
+            "8.19.2 相应语言块": 5,
+            "8.19.3 自动名称推导": 5,
+            "8.19.4 预处理器": 5,
+            "8.19.5 src 导入": 5,
+            "8.19.6 注释": 5
+        },
+        "8.20 单文件组件 script setup": {
+            "8.20.1 基本语法": 5,
+            "8.20.2 响应式": 5,
+            "8.20.3 使用组件": 5,
+            "8.20.4 使用自定义指令": 5,
+            "8.20.5 defineProps() 和 defineEmits()": 5,
+            "8.20.6 defineModel()": 5,
+            "8.20.7 defineExpose()": 5,
+            "8.20.8 defineOptions()": 5,
+            "8.20.9 defineSlots()": 5,
+            "8.20.10 useSlots() 和 useAttrs()": 5,
+            "8.20.11 与普通的 <script> 一起使用": 5,
+            "8.20.12 顶层 await": 5,
+            "8.20.13 泛型": 5,
+            "8.20.14 限制": 5
+        },
+        "8.21 单文件组件 CSS 功能": {
+            "8.21.1 组件作用域 CSS": 5,
+            "8.21.2 CSS Modules": 5,
+            "8.21.3 CSS 中的 v-bind()": 5
+        },
+        "8.22 进阶 API 渲染函数": {
+            "8.22.1 h()": 5,
+            "8.22.2 mergeProps()": 5,
+            "8.22.3 cloneVNode()": 5,
+            "8.22.4 isVNode()": 5,
+            "8.22.5 resolveComponent()": 5,
+            "8.22.6 resolveDirective()": 5,
+            "8.22.7 withDirectives()": 5,
+            "8.22.8 withModifiers()": 5
+        },
+        "8.23 进阶 API 服务端渲染": {
+            "8.23.1 renderToString()": 5,
+            "8.23.2 renderToNodeStream()": 5,
+            "8.23.3 pipeToNodeWritable()": 5,
+            "8.23.4 renderToWebStream()": 5,
+            "8.23.5 pipeToWebWritable()": 5,
+            "8.23.6 renderToSimpleStream()": 5,
+            "8.23.7 useSSRContext()": 5
+        },
+        "8.24 进阶 API TypeScript 工具类型": {
+            "8.24.1 PropType<T>": 5,
+            "8.24.2 MaybeRef<T>": 5,
+            "8.24.3 MaybeRefOrGetter<T>": 5,
+            "8.24.4 ExtractPropTypes<T>": 5,
+            "8.24.5 ExtractPublicPropTypes<T>": 5,
+            "8.24.6 ComponentCustomProperties": 5,
+            "8.24.7 ComponentCustomOptions": 5,
+            "8.24.8 ComponentCustomProps": 5,
+            "8.24.9 CSSProperties": 5
+        },
+        "8.25 进阶 API 自定义渲染": {
+            "8.25.1 createRenderer()": 5
+        },
+        "8.26 进阶 API 编译时标志": {
+            "8.26.1 __VUE_OPTIONS_API__": 5,
+            "8.26.2 __VUE_PROD_DEVTOOLS__": 5,
+            "8.26.3 __VUE_PROD_HYDRATION_MISMATCH_DETAILS__": 5,
+            "8.26.4 配置指南": 5
+        }
     }
 }
